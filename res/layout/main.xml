@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+        <TextView
+                android:id="@+id/activity_info"
+                android:layout_width="fill_parent"
+                android:layout_height="300dp"
+                android:scrollbars="vertical"
+                android:gravity="bottom"
+                android:text="Detecting user activity.. wait for a few seconds and then hit update.."
+                />
+    <Button
+            android:id="@+id/update_activity_button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/update_user_activity"/>
+</LinearLayout>
+
