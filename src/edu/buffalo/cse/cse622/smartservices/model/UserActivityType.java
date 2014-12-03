@@ -10,7 +10,9 @@ public enum UserActivityType {
     UNKNOWN,
     TILTING,
     WALKING,
-    RUNNING;
+    RUNNING,
+    STILL_INDOOR,
+    MOVING_INDOOR;
 
     public static UserActivityType getActivityType(int activityTypeCode) {
         switch (activityTypeCode) {
@@ -34,4 +36,17 @@ public enum UserActivityType {
                 return null;
         }
     }
+
+    public boolean isStill() {
+        return (this == STILL || this == STILL_INDOOR);
+    }
+
+    public boolean isMoving() {
+        return !isStill() && (this != UNKNOWN);
+    }
+
+    public boolean isIndoor() {
+        return (this == MOVING_INDOOR || this == STILL_INDOOR);
+    }
+
 }

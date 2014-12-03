@@ -4,7 +4,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import edu.buffalo.cse.cse622.smartservices.model.UserActivityType;
 
-//use significant motion sensor
 public class IndoorService {
     private final UserSensorEventListener sensorEventListener;
 

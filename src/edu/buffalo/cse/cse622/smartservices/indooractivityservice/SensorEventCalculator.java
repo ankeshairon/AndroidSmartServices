@@ -34,7 +34,6 @@ public class SensorEventCalculator implements Runnable {
             }
 
             computeNetAccelerations();
-//            Log.w(TAG, "Net acceleration calculated - " + accelerationValues);
 
             if (accelerationValues.size() < WINDOW_SIZE) {
                 continue;
@@ -61,7 +60,7 @@ public class SensorEventCalculator implements Runnable {
                 ++highs;
             }
         }
-        userActivityType = (lows > highs) ? UserActivityType.STILL : UserActivityType.WALKING;
+        userActivityType = (lows > highs) ? UserActivityType.STILL_INDOOR : UserActivityType.MOVING_INDOOR;
         Log.w(TAG, "User activity updated to " + userActivityType);
     }
 
@@ -91,7 +90,8 @@ public class SensorEventCalculator implements Runnable {
         float[] accelerationComponents;
         Float acceleration;
 
-        while ((accelerationComponents = incomingValues.poll()) != null) {
+        while (incomingValues.peek() != null) {
+            accelerationComponents = incomingValues.poll();
             acceleration = getNetValue(accelerationComponents);
             accelerationValues.add(acceleration);
         }

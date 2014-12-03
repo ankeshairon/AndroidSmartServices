@@ -24,7 +24,7 @@ public class UserSensorEventListener implements SensorEventListener {
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
+        //not implemented yet
     }
 
     public UserActivityType getUserActivityType() {
